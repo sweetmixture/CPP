@@ -59,11 +59,14 @@ bool BaseParser::Parser( const char c )
 					atom_type_name[CurrentAtomNumber].push_back(tmp);
 
 					CurrentAtomNumber++;
+
+					// valid expression
+					// ss >> x >> y >> z >> tmp;	<-> (ss >> x) >> y ....
 				}
 			}
 		}
-		std::cout << "am I working?\n";
-		std::cout << CurrentAtomNumber << std::endl;
+		//std::cout << "am I working?\n";
+		//std::cout << CurrentAtomNumber << std::endl;
 		ReadFile.close();
 		return true;
 	}
@@ -94,5 +97,6 @@ void BaseParser::Decomment()
 		WriteFile << s;
 		/* std::string -> char* */
 	}
+	WriteFile.close();
 	return;
 }

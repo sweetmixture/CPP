@@ -1,6 +1,6 @@
 # this is Comment
 # COMMENT
-atom +1.1    1.5    -3.      F		# This is Comment
+atom +1.1    1.5    -3.      F# This is Comment
 
 atom -1.1   -1.5    3.       F
 
