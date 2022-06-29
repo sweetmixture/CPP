@@ -1,0 +1,106 @@
+data      : 0
+obj  info : 0x7ffee6c7f980
+data info : 0x7ff806d00500
+CopyCons
+data      : 0
+obj  info : 0x7ffee6c7f968
+data info : 0x7ff806d00510
+
+1> ScopeTestStart
+Destructor Called : 0x7ffee6c7f960
+*> ScopeTestEnd
+
+2> AssignOperatorStart
+operator=
+t2 info
+data      : 100
+obj  info : 0x7ffee6c7f968
+data info : 0x7ff806d00510
+t3 info
+data      : 100
+obj  info : 0x7ffee6c7f958
+data info : 0x7ff806d00520
+*> AssignOperatorEnd
+
+*> Set 10
+data      : 10
+obj  info : 0x7ffee6c7f958
+data info : 0x7ff806d00520
+*> Set 123 by Foo 
+data      : 123
+obj  info : 0x7ffee6c7f958
+data info : 0x7ff806d00520
+
+Create Obj (by default) and Reset by obj returing foo
+data      : 0
+obj  info : 0x7ffee6c7f950
+data info : 0x7ff806d00530
+CopyCons
+CopyCons
+operator=
+Destructor Called : 0x7ffee6c7f948
+Destructor Called : 0x7ffee6c7f940
+data      : 123
+obj  info : 0x7ffee6c7f950
+data info : 0x7ff806d00530
+
+CreateObjByFoo and ReturnPointer
+In Create Foo - RetTypePtr
+data      : 0
+obj  info : 0x7ff806d00540
+data info : 0x7ff806d00550
+Info After Returned
+data      : 0
+obj  info : 0x7ff806d00540
+data info : 0x7ff806d00550
+Destructor Called : 0x7ff806d00540
+
+
+
+CreateObjByFoo and ReturnReference
+In Create Foo - RetTypeRef
+data      : 10
+obj  info : 0x7ffee6c7f8e8
+data info : 0x7ff806d00550
+Destructor Called : 0x7ffee6c7f8e8
+CopyCons
+Info After Returned
+data      : 114296144
+obj  info : 0x7ffee6c7f930
+data info : 0x7ff806d00550
+
+
+*> Use of Universal Reference && : MoveSemantics ... Compare below two cases
+
+Case 1
+CreatObjByFoo and ReturnRval
+In Create Foo - RetTypeRVal
+data      : 10
+obj  info : 0x7ffee6c7f928
+data info : 0x7ff806d00560
+Info After Returned
+data      : 10
+obj  info : 0x7ffee6c7f928
+data info : 0x7ff806d00560
+
+
+
+Case 2
+CreatObjByFoo and ReturnRval
+In Create Foo - RetTypeRVal
+data      : 10
+obj  info : 0x7ffee6c7f918
+data info : 0x7ff806d00570
+Info After Returned
+data      : 10
+obj  info : 0x7ffee6c7f918
+data info : 0x7ff806d00570
+
+
+Destructor Called : 0x7ffee6c7f918
+Destructor Called : 0x7ffee6c7f928
+Destructor Called : 0x7ffee6c7f930
+Destructor Called : 0x7ffee6c7f950
+Destructor Called : 0x7ffee6c7f958
+Destructor Called : 0x7ffee6c7f968
+Destructor Called : 0x7ffee6c7f980
